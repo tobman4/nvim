@@ -42,11 +42,14 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local nvim_lsp = require'lspconfig'
 
 -- Python
-local servers = { 'pyright' }
-require'lspconfig'.pyright.setup {
-  capabilities = capabilities,
-  root_dir = nvim_lsp.util.root_pattern('.git','main.py');
-}
+-- local servers = { 'pyright' }
+-- require'lspconfig'.pyright.setup {
+--   capabilities = capabilities,
+--   root_dir = nvim_lsp.util.root_pattern('.git','main.py');
+-- }
+
+-- Ansible
+-- require'lspconfig'.ansiblels.setup{}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -153,3 +156,6 @@ require'lspconfig'.dockerls.setup{}
 
 -- Typescript
 require'lspconfig'.tsserver.setup{}
+
+-- prisma
+require'lspconfig'.prismals.setup{}
