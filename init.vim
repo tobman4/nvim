@@ -43,6 +43,8 @@ map <A-Down> :horizontal resize -5<CR>
 " map F :Clap files<CR>
 " map C :Clap command<CR>
 
+map <C-R> :so ~/.config/nvim/init.vim<CR>
+
 " }}}
 
 call plug#begin()
