@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   -- use 'seandewar/nvimesweeper'
   use 'preservim/nerdtree'
+  use 'ryanoasis/vim-devicons'
+  use 'mhinz/vim-signify'
 
   use {
     "someone-stole-my-name/yaml-companion.nvim",
