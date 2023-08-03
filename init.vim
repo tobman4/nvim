@@ -69,7 +69,7 @@ Plug 'mhinz/vim-signify'
 " Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
 " Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()

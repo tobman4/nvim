@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use 'Hoffs/omnisharp-extended-lsp.nvim'
   use 'nvim-lua/plenary.nvim'
   -- use 'seandewar/nvimesweeper'
+  use 'preservim/nerdtree'
 
   use {
     "someone-stole-my-name/yaml-companion.nvim",
