@@ -1,7 +1,12 @@
 return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      "nvim-treesitter/nvim-treesitter"
+    }
+  }
 
   -- Autocompletion
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
@@ -12,7 +17,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'Hoffs/omnisharp-extended-lsp.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'seandewar/nvimesweeper'
+  -- use 'seandewar/nvimesweeper'
 
   use {
     "someone-stole-my-name/yaml-companion.nvim",
@@ -26,10 +31,14 @@ return require('packer').startup(function(use)
     end,
   }
 
+  --[[
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
+  ]]--
 
   use "lukas-reineke/indent-blankline.nvim"
+  
+  use {'ojroques/nvim-hardline'}
 end)

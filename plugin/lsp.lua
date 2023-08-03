@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<space>ci', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
@@ -30,12 +30,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,
 })
+
+--[[
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    local function toSnakeCase(str)
+      return string.gsub(str, "%s*[- ]%s*", "_")
+    end
+
+    if client.name == 'omnisharp' then
+      local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers
+      for i, v in ipairs(tokenModifiers) do
+        tokenModifiers[i] = toSnakeCase(v)
+      end
+      local tokenTypes = client.server_capabilities.semanticTokensProvider.legend.tokenTypes
+      for i, v in ipairs(tokenTypes) do
+        tokenTypes[i] = toSnakeCase(v)
+      end
+    end
+  end,
+})
+--]]
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -49,7 +71,9 @@ local nvim_lsp = require'lspconfig'
 -- }
 
 -- Ansible
--- require'lspconfig'.ansiblels.setup{}
+require'lspconfig'.ansiblels.setup{
+  cmd = { "/usr/bin/ansible-language-server --stdio" }
+}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -95,9 +119,13 @@ cmp.setup {
 
 -- C#
 -- Dotnet
+
+require'lspconfig'.csharp_ls.setup{}
+
+--[[
 local pid = vim.fn.getpid()
 require'lspconfig'.omnisharp.setup {
-  cmd = { "dotnet", "/home/tl/Omnisharp/OmniSharp.dll", '--languageserver' , '--hostPID', tostring(pid) },
+  cmd = { "dotnet", "/home/tl/omnisharp-net6/OmniSharp.dll", '--languageserver' , '--hostPID', tostring(pid) },
 
   handlers = {
     ["textDocument/definition"] = require('omnisharp_extended').handler,
@@ -113,10 +141,10 @@ require'lspconfig'.omnisharp.setup {
     -- for projects that are relevant to code that is being edited. With this
     -- setting enabled OmniSharp may load fewer projects and may thus display
     -- incomplete reference lists for symbols.
-    enable_ms_build_load_projects_on_demand = false,
+    enable_ms_build_load_projects_on_demand = true,
 
     -- Enables support for roslyn analyzers, code fixes and rulesets.
-    enable_roslyn_analyzers = false,
+    enable_roslyn_analyzers = true,
 
     -- Specifies whether 'using' directives should be grouped and sorted during
     -- document formatting.
@@ -128,7 +156,7 @@ require'lspconfig'.omnisharp.setup {
     -- have a negative impact on initial completion responsiveness,
     -- particularly for the first few completion sessions after opening a
     -- solution.
-    enable_import_completion = false,
+    enable_import_completion = true,
 
     -- Specifies whether to include preview versions of the .NET SDK when
     -- determining which version to use for project loading.
@@ -138,6 +166,7 @@ require'lspconfig'.omnisharp.setup {
     -- true
     analyze_open_documents_only = false,
 }
+--]]
 
 -- Bash
 require'lspconfig'.bashls.setup{}
@@ -157,5 +186,30 @@ require'lspconfig'.dockerls.setup{}
 -- Typescript
 require'lspconfig'.tsserver.setup{}
 
--- prisma
-require'lspconfig'.prismals.setup{}
+-- Markdown
+require'lspconfig'.remark_ls.setup{}
+
+-- lua
+require'lspconfig'.lua_ls.setup {
+  cmd = { "/home/tl/lua-language-server/bin/lua-language-server" },
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}

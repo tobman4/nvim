@@ -24,6 +24,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 
+let g:python3_host_prog = 'python3.9'
 let g:ale_disable_lsp = 1
 
 " Vimspector: {{{
@@ -39,9 +40,9 @@ map <A-Right> :vertical resize +5<CR>
 map <A-Up> :horizontal resize +5<CR>
 map <A-Down> :horizontal resize -5<CR>
 
-" map F :Telescope find_files<CR>
-" map F :Clap files<CR>
-" map C :Clap command<CR>
+map <C-/> :noh<CR>
+map <S-Left> ^
+map <S-Right> $
 
 map <C-R> :so ~/.config/nvim/init.vim<CR>
 
@@ -49,7 +50,7 @@ map <C-R> :so ~/.config/nvim/init.vim<CR>
 
 call plug#begin()
 
-Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
 Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
@@ -58,16 +59,16 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " Plug 'vn-ki/coc-clap'
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'flazz/vim-colorschemes'
-Plug 'puremourning/vimspector'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'puremourning/vimspector'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 " Plug 'OmniSharp/omnisharp-vim'
 " Plug 'nickspoons/vim-sharpenup'
 " Plug 'APZelos/blamer.nvim'
 " Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -79,7 +80,7 @@ call plug#end()
 
 " }}}
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme catppuccin-frappe
 
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
@@ -96,8 +97,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 " NERD TREE: {{{
 
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFocus<CR>
+
+" nnoremap <C-q> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFocus<CR>
 
 " }}}
 
@@ -128,7 +130,7 @@ let g:ale_set_highlights = 0
 highlight ALEWarning ctermbg=DarkMagenta
 
 let g:ale_linters = {
-\		'cs': ['OmniSharp']
+\ 'cs': ['OmniSharp']
 \ }
 let g:ale_fixers = {
 \ "c#": [  "dotnet-format" ],
@@ -140,3 +142,5 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " }}}
+
+" hi Normal guibg=NONE ctermbg=NONE
