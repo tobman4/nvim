@@ -15,7 +15,7 @@ set mouse=""
 
 set encoding=utf8
 set relativenumber
-set completeopt=menu,menuone,noselect,longest
+" set completeopt=menu,menuone,noselect,longest
 
 set splitright
 set splitbelow
@@ -24,7 +24,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 
-let g:python3_host_prog = 'python3.9'
+let g:python3_host_prog = '/usr/bin/python3.9'
 let g:ale_disable_lsp = 1
 
 " Vimspector: {{{

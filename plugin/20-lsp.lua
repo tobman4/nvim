@@ -1,4 +1,8 @@
-require'lspconfig'.pyright.setup{}
+local lsp = require'lspconfig'
+local coq = require'coq'
+
+
+lsp.pyright.setup{}
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -19,9 +23,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<space>ci', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
     vim.keymap.set('n', '<space>wl', function()
@@ -60,22 +65,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --]]
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local nvim_lsp = require'lspconfig'
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Python
 -- local servers = { 'pyright' }
--- require'lspconfig'.pyright.setup {
+-- lsp.pyright.setup {
 --   capabilities = capabilities,
 --   root_dir = nvim_lsp.util.root_pattern('.git','main.py');
 -- }
 
 -- Ansible
-require'lspconfig'.ansiblels.setup{
+lsp.ansiblels.setup{
   cmd = { "/usr/bin/ansible-language-server --stdio" }
 }
 
 -- nvim-cmp setup
+--[[
 local cmp = require 'cmp'
 cmp.setup {
   snippet = {
@@ -116,15 +121,16 @@ cmp.setup {
     { name = 'vsnip' },
   },
 }
+-- ]]
 
 -- C#
 -- Dotnet
 
-require'lspconfig'.csharp_ls.setup{}
+lsp.csharp_ls.setup(coq.lsp_ensure_capabilities({}))
 
 --[[
 local pid = vim.fn.getpid()
-require'lspconfig'.omnisharp.setup {
+lsp.omnisharp.setup {
   cmd = { "dotnet", "/home/tl/omnisharp-net6/OmniSharp.dll", '--languageserver' , '--hostPID', tostring(pid) },
 
   handlers = {
@@ -169,7 +175,7 @@ require'lspconfig'.omnisharp.setup {
 --]]
 
 -- Bash
-require'lspconfig'.bashls.setup{}
+lsp.bashls.setup{}
 
 -- Yaml
 local cfg = require("yaml-companion").setup({
@@ -181,16 +187,16 @@ local cfg = require("yaml-companion").setup({
 require("lspconfig")["yamlls"].setup(cfg)
 
 -- Docker
-require'lspconfig'.dockerls.setup{}
+lsp.dockerls.setup{}
 
 -- Typescript
-require'lspconfig'.tsserver.setup{}
+lsp.tsserver.setup{}
 
 -- Markdown
-require'lspconfig'.remark_ls.setup{}
+lsp.remark_ls.setup{}
 
 -- lua
-require'lspconfig'.lua_ls.setup {
+lsp.lua_ls.setup {
   cmd = { "/home/tl/lua-language-server/bin/lua-language-server" },
   settings = {
     Lua = {

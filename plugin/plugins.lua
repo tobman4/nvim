@@ -10,11 +10,11 @@ return require('packer').startup(function(use)
 
   -- Autocompletion
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  -- use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  -- use 'hrsh7th/cmp-vsnip'
+  -- use 'hrsh7th/vim-vsnip'
+  -- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'Hoffs/omnisharp-extended-lsp.nvim'
   use 'nvim-lua/plenary.nvim'
   -- use 'seandewar/nvimesweeper'
@@ -22,10 +22,17 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
   use 'mhinz/vim-signify'
 
+  use 'ms-jpq/coq_nvim'
+
   -- TabLine
   -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
   use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
   use 'romgrk/barbar.nvim'
+
+  use {
+    "cbochs/grapple.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
 
   use {
     "someone-stole-my-name/yaml-companion.nvim",
