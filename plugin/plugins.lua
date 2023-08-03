@@ -22,6 +22,11 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
   use 'mhinz/vim-signify'
 
+  -- TabLine
+  -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+  use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+  use 'romgrk/barbar.nvim'
+
   use {
     "someone-stole-my-name/yaml-companion.nvim",
     requires = {
