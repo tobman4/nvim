@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
 
   use 'ms-jpq/coq_nvim'
 
+  use 'tpope/vim-commentary'
+
   -- TabLine
   -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
   use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
