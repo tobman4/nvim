@@ -190,7 +190,7 @@ require("lspconfig")["yamlls"].setup(cfg)
 lsp.dockerls.setup{}
 
 -- Typescript
-lsp.tsserver.setup{}
+lsp.tsserver.setup(coq.lsp_ensure_capabilities({}));
 
 -- Markdown
 lsp.remark_ls.setup{}
