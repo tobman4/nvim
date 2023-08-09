@@ -1,7 +1,7 @@
-require'barbar'.setup {
-  icons = {
-    filetype = {
-      enabled = false
-    }
-  }
-}
+-- require'barbar'.setup {
+--   icons = {
+--     filetype = {
+--       enabled = false
+--     }
+--   }
+-- }
