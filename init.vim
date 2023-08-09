@@ -27,6 +27,10 @@ set updatetime=300
 let g:python3_host_prog = '/usr/bin/python3.9'
 let g:ale_disable_lsp = 1
 
+" let g:airline_statusline_ontop=1
+
+filetype plugin on
+
 " Vimspector: {{{
 
   let g:vimspector_enable_mappings = 'HUMAN'

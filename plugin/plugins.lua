@@ -31,6 +31,11 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
   -- use 'romgrk/barbar.nvim'
 
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+
+  use 'vimwiki/vimwiki'
+
   use {
     "cbochs/grapple.nvim",
     requires = { "nvim-lua/plenary.nvim" },
