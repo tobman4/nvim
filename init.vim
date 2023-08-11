@@ -25,11 +25,13 @@ set nowritebackup
 set updatetime=300
 
 let g:python3_host_prog = '/usr/bin/python3.9'
-let g:ale_disable_lsp = 1
+let g:python_recommended_style=0
 
 " let g:airline_statusline_ontop=1
 
 filetype plugin on
+
+autocmd FileType help wincmd L
 
 " Vimspector: {{{
 
