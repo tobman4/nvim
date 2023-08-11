@@ -2,7 +2,6 @@ local lsp = require'lspconfig'
 local coq = require'coq'
 
 
-lsp.pyright.setup{}
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -37,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', '<space>gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
+    vim.lsp.buf.format { async = true }
     end, opts)
   end,
 })
@@ -68,11 +67,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Python
--- local servers = { 'pyright' }
--- lsp.pyright.setup {
---   capabilities = capabilities,
---   root_dir = nvim_lsp.util.root_pattern('.git','main.py');
--- }
+lsp.pyright.setup(coq.lsp_ensure_capabilities({}))
 
 -- Ansible
 lsp.ansiblels.setup{
