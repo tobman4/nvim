@@ -1,7 +1,10 @@
 local lsp = require'lspconfig'
 local coq = require'coq'
 
-
+require "lsp_signature".setup({
+  always_trigger = false,
+  toggle_key = '<F2>'
+})
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
