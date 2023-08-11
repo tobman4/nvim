@@ -23,7 +23,9 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-signify'
 
   use "ray-x/lsp_signature.nvim"
+
   use 'ms-jpq/coq_nvim'
+  use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 
   use 'tpope/vim-commentary'
 
