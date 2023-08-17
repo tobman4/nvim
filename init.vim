@@ -24,7 +24,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 
-let g:python3_host_prog = '/usr/bin/python3.9'
+let g:python3_host_prog = $VIM_PY
 let g:python_recommended_style=0
 
 " let g:airline_statusline_ontop=1
