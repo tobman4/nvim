@@ -54,13 +54,13 @@ map <C-R> :so ~/.config/nvim/init.vim<CR>
 
 " }}}
 
-call plug#begin()
+" call plug#begin()
 
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
 " Plug 'dracula/vim'
 " Plug 'ryanoasis/vim-devicons'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+" Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " Plug 'vn-ki/coc-clap'
 " Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
@@ -78,7 +78,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " Plug 'preservim/nerdtree'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call plug#end()
+" call plug#end()
 
 " Provider: {{{
 
