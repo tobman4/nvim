@@ -2,6 +2,7 @@ local lsp = require'lspconfig'
 local coq = require'coq'
 
 require "lsp_signature".setup({
+  auto_close_after = 2,
   always_trigger = false,
   toggle_key = '<F2>'
 })
