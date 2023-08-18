@@ -4,12 +4,13 @@ vim.api.nvim_set_keymap('n','<C-f>',':NERDTreeFocus<CR>', { noremap = true, sile
 
 function NerdOpen()
 
-  local nerdtree_buffer_name = "NERD_tree_1"
+  local nerdtree_buffer_name = "NERD_tree"
 
   for _,win in ipairs(vim.api.nvim_list_wins()) do
     local curr = vim.api.nvim_get_current_win()
     local buf = vim.api.nvim_win_get_buf(win)
     local buf_name = vim.api.nvim_buf_get_name(buf)
+
 
     if buf_name:find(nerdtree_buffer_name) then
       if win == curr then vim.cmd(":NERDTreeClose")
