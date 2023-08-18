@@ -45,7 +45,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
---[[
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
@@ -65,13 +64,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
---]]
 
 -- Add additional capabilities supported by nvim-cmp
 -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Python
 lsp.pyright.setup(coq.lsp_ensure_capabilities({}))
+
+-- Markup
+-- Json
+-- YAML
+require'lspconfig'.jsonls.setup(coq.lsp_ensure_capabilities({
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true }
+    }
+  }
+}))
 
 -- Ansible
 lsp.ansiblels.setup{
@@ -127,63 +137,64 @@ cmp.setup {
 
 lsp.csharp_ls.setup(coq.lsp_ensure_capabilities({}))
 
---[[
-local pid = vim.fn.getpid()
-lsp.omnisharp.setup {
-  cmd = { "dotnet", "/home/tl/omnisharp-net6/OmniSharp.dll", '--languageserver' , '--hostPID', tostring(pid) },
+-- local pid = vim.fn.getpid()
+-- lsp.omnisharp.setup(coq.lsp_ensure_capabilities({
+--   cmd = { 
+--     "dotnet", "/home/tl/omnisharp-linux-x64-net6.0/OmniSharp.dll",
+--     '--languageserver',
+--     '--hostPID', tostring(pid),
+--   },
+--   handlers = {
+--     ["textDocument/definition"] = require('omnisharp_extended').handler,
+--   },
 
-  handlers = {
-    ["textDocument/definition"] = require('omnisharp_extended').handler,
-  },
+--     -- Enables support for reading code style, naming convention and analyzer
+--     -- settings from .editorconfig.
+--     enable_editorconfig_support = true,
 
-    -- Enables support for reading code style, naming convention and analyzer
-    -- settings from .editorconfig.
-    enable_editorconfig_support = true,
+--     -- If true, MSBuild project system will only load projects for files that
+--     -- were opened in the editor. This setting is useful for big C# codebases
+--     -- and allows for faster initialization of code navigation features only
+--     -- for projects that are relevant to code that is being edited. With this
+--     -- setting enabled OmniSharp may load fewer projects and may thus display
+--     -- incomplete reference lists for symbols.
+--     enable_ms_build_load_projects_on_demand = false,
 
-    -- If true, MSBuild project system will only load projects for files that
-    -- were opened in the editor. This setting is useful for big C# codebases
-    -- and allows for faster initialization of code navigation features only
-    -- for projects that are relevant to code that is being edited. With this
-    -- setting enabled OmniSharp may load fewer projects and may thus display
-    -- incomplete reference lists for symbols.
-    enable_ms_build_load_projects_on_demand = true,
+--     -- Enables support for roslyn analyzers, code fixes and rulesets.
+--     enable_roslyn_analyzers = true,
 
-    -- Enables support for roslyn analyzers, code fixes and rulesets.
-    enable_roslyn_analyzers = true,
+--     -- Specifies whether 'using' directives should be grouped and sorted during
+--     -- document formatting.
+--     organize_imports_on_format = false,
 
-    -- Specifies whether 'using' directives should be grouped and sorted during
-    -- document formatting.
-    organize_imports_on_format = false,
+--     -- Enables support for showing unimported types and unimported extension
+--     -- methods in completion lists. When committed, the appropriate using
+--     -- directive will be added at the top of the current file. This option can
+--     -- have a negative impact on initial completion responsiveness,
+--     -- particularly for the first few completion sessions after opening a
+--     -- solution.
+--     enable_import_completion = true,
 
-    -- Enables support for showing unimported types and unimported extension
-    -- methods in completion lists. When committed, the appropriate using
-    -- directive will be added at the top of the current file. This option can
-    -- have a negative impact on initial completion responsiveness,
-    -- particularly for the first few completion sessions after opening a
-    -- solution.
-    enable_import_completion = true,
+--     -- Specifies whether to include preview versions of the .NET SDK when
+--     -- determining which version to use for project loading.
+--     sdk_include_prereleases = true,
 
-    -- Specifies whether to include preview versions of the .NET SDK when
-    -- determining which version to use for project loading.
-    sdk_include_prereleases = true,
-
-    -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
-    -- true
-    analyze_open_documents_only = false,
-}
---]]
+--     -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
+--     -- true
+--     analyze_open_documents_only = false,
+-- }))
 
 -- Bash
 lsp.bashls.setup{}
 
 -- Yaml
-local cfg = require("yaml-companion").setup({
-  -- Add any options here, or leave empty to use the default settings
-  -- lspconfig = {
-  cmd = {"yaml-language-server"}
-  -- },
-})
-require("lspconfig")["yamlls"].setup(cfg)
+-- local cfg = require("yaml-companion").setup({
+--   -- Add any options here, or leave empty to use the default settings
+--   -- lspconfig = {
+--   cmd = {"yaml-language-server"}
+--   -- },
+-- })
+-- require("lspconfig")["yamlls"].setup(cfg)
 
 -- Docker
 lsp.dockerls.setup{}
@@ -191,8 +202,6 @@ lsp.dockerls.setup{}
 -- Typescript
 lsp.tsserver.setup(coq.lsp_ensure_capabilities({}));
 
--- Markdown
-lsp.remark_ls.setup{}
 
 -- lua
 lsp.lua_ls.setup {

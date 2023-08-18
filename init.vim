@@ -1,9 +1,9 @@
 " Looks and nav
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
+" set softtabstop=2
 set expandtab
-set shiftround
+" set shiftround
 set backspace=indent,eol,start
 set cursorline
 set incsearch
@@ -86,7 +86,7 @@ map <C-R> :so ~/.config/nvim/init.vim<CR>
 
 " }}}
 
-colorscheme catppuccin-frappe
+colorscheme lunar
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
