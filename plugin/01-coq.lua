@@ -6,6 +6,9 @@ vim.g.coq_settings = {
     pre_select = false
   },
   clients = {
+    lsp = {
+      always_on_top = {"omnisharp"};
+    },
     tmux = {
       enabled = false
     },

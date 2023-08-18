@@ -22,6 +22,8 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
   use 'mhinz/vim-signify'
 
+  use 'b0o/schemastore.nvim'
+
   use "ray-x/lsp_signature.nvim"
 
   use 'ms-jpq/coq_nvim'
@@ -66,6 +68,11 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
 
   use {'ojroques/nvim-hardline'}
+  
+  use { "Tastyep/structlog.nvim" }
 
+  -- Color
   use 'catppuccin/nvim'
+  use 'lunarvim/Onedarker.nvim'
+  use 'lunarvim/lunar.nvim'
 end)
