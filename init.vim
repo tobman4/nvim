@@ -41,6 +41,8 @@ autocmd FileType help wincmd L
 
 " COOL_KEYS: {{{
 
+nmap s i
+
 map <A-Left> :vertical resize -5<CR>
 map <A-Right> :vertical resize +5<CR>
 map <A-Up> :horizontal resize +5<CR>
@@ -51,6 +53,9 @@ map <S-Left> ^
 map <S-Right> $
 
 map <C-R> :so ~/.config/nvim/init.vim<CR>
+
+nnoremap <C-w>t <C-W>T
+map <F8> :TagbarToggle<CR>
 
 " }}}
 
