@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
 
   use "ray-x/lsp_signature.nvim"
 
+  use 'preservim/tagbar'
+
   use 'ms-jpq/coq_nvim'
   use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 

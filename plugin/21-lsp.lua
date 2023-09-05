@@ -83,6 +83,22 @@ require'lspconfig'.jsonls.setup(coq.lsp_ensure_capabilities({
   }
 }))
 
+require('lspconfig').yamlls.setup(coq.lsp_ensure_capabilities({
+  settings = {
+    yaml = {
+      schemaStore = {
+        -- You must disable built-in schemaStore support if you want to use
+        -- this plugin and its advanced options like `ignore`.
+        enable = false,
+        -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+        url = "",
+      },
+      schemas = require('schemastore').yaml.schemas(),
+    },
+  },
+}))
+
+
 -- Ansible
 lsp.ansiblels.setup{
   cmd = { "/usr/bin/ansible-language-server --stdio" }
@@ -186,18 +202,6 @@ lsp.csharp_ls.setup(coq.lsp_ensure_capabilities({}))
 
 -- Bash
 lsp.bashls.setup{}
-
--- Yaml
--- local cfg = require("yaml-companion").setup({
---   -- Add any options here, or leave empty to use the default settings
---   -- lspconfig = {
---   cmd = {"yaml-language-server"}
---   -- },
--- })
--- require("lspconfig")["yamlls"].setup(cfg)
-
--- Docker
-lsp.dockerls.setup{}
 
 -- Typescript
 lsp.tsserver.setup(coq.lsp_ensure_capabilities({}));

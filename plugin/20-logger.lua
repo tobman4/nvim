@@ -22,7 +22,8 @@ log.configure({
         },
         log.formatters.Format(
           "%s [%s]: %-10s",
-          { "timestamp", "level", "msg" }
+          { "timestamp", "level", "msg" },
+          { blacklist_all = true }
         ),
         log.sinks.RotatingFile(
           "/home/tl/logs/nvim.log",
