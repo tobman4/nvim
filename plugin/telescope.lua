@@ -12,7 +12,7 @@ require('telescope').setup{
     },
     file_ignore_patterns = { 
       "__pycache__",
-      "env",
+      "%.env",
       "obj",
       "bin",
       "node_modules"
