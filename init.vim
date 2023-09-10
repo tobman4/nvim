@@ -56,6 +56,9 @@ map <S-Right> $
 
 map <C-R> :so ~/.config/nvim/init.vim<CR>
 
+nmap <C-PageDown> m`o<Esc>``
+nmap <C-PageUp> m`O<Esc>``
+
 nnoremap <C-w>t <C-W>T
 map <F8> :TagbarToggle<CR>
 
