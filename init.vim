@@ -7,6 +7,7 @@ set expandtab
 set backspace=indent,eol,start
 set cursorline
 set incsearch
+
 set hlsearch
 set nowrap
 set number
@@ -45,10 +46,15 @@ au BufRead,BufNewFile *.yml.ansible set filetype=yaml.ansible
 
 nmap s i
 
-map <A-Left> :vertical resize -5<CR>
-map <A-Right> :vertical resize +5<CR>
-map <A-Up> :horizontal resize +5<CR>
-map <A-Down> :horizontal resize -5<CR>
+imap <A-Up> <Esc>:m-2<CR>i
+imap <A-Down> <Esc>:m+1<CR>i
+
+nmap <A-Left> :vertical resize -5<CR>
+nmap <A-Right> :vertical resize +5<CR>
+nmap <A-Up> :horizontal resize +5<CR>
+nmap <A-Down> :horizontal resize -5<CR>
+
+
 
 map <C-/> :noh<CR>
 map <S-Left> ^
