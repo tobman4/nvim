@@ -33,6 +33,8 @@ filetype plugin on
 
 autocmd FileType help wincmd L
 
+au BufRead,BufNewFile *.yml.ansible set filetype=yaml.ansible
+
 " Vimspector: {{{
 
   let g:vimspector_enable_mappings = 'HUMAN'
