@@ -56,7 +56,6 @@ nmap <A-Down> :horizontal resize -5<CR>
 
 
 
-map <C-/> :noh<CR>
 map <S-Left> ^
 map <S-Right> $
 
