@@ -14,6 +14,9 @@ vim.g.coq_settings = {
     },
     buffers = {
       enabled = false
+    },
+    snippets = {
+      enabled = false
     }
   }
 }

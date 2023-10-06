@@ -151,7 +151,13 @@ cmp.setup {
 -- C#
 -- Dotnet
 
-lsp.csharp_ls.setup(coq.lsp_ensure_capabilities({}))
+lsp.csharp_ls.setup(coq.lsp_ensure_capabilities({
+
+  handlers = {
+    ["textDocument/definition"] = require('csharpls_extended').handler,
+  }
+
+}))
 
 -- local pid = vim.fn.getpid()
 -- lsp.omnisharp.setup(coq.lsp_ensure_capabilities({

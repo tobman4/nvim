@@ -15,7 +15,8 @@ return require('packer').startup(function(use)
   -- use 'hrsh7th/cmp-vsnip'
   -- use 'hrsh7th/vim-vsnip'
   -- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'Hoffs/omnisharp-extended-lsp.nvim'
+  -- use 'Hoffs/omnisharp-extended-lsp.nvim'
+  use 'Decodetalkers/csharpls-extended-lsp.nvim'
   use 'nvim-lua/plenary.nvim'
   -- use 'seandewar/nvimesweeper'
   use 'preservim/nerdtree'
