@@ -29,8 +29,8 @@ return require('packer').startup(function(use)
 
   use 'preservim/tagbar'
 
-  use 'ms-jpq/coq_nvim'
-  use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+  -- use 'ms-jpq/coq_nvim'
+  -- use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 
   use 'tpope/vim-commentary'
 

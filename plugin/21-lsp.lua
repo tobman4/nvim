@@ -1,5 +1,4 @@
 local lsp = require'lspconfig'
-local coq = require'coq'
 
 require "lsp_signature".setup({
   auto_close_after = 2,
@@ -69,21 +68,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Python
-lsp.pyright.setup(coq.lsp_ensure_capabilities({}))
+lsp.pyright.setup {}
 
 -- Markup
 -- Json
 -- YAML
-lsp.jsonls.setup(coq.lsp_ensure_capabilities({
+lsp.jsonls.setup({
   settings = {
     json = {
       schemas = require('schemastore').json.schemas(),
       validate = { enable = true }
     }
   }
-}))
+})
 
-require('lspconfig').yamlls.setup(coq.lsp_ensure_capabilities({
+require('lspconfig').yamlls.setup({
   settings = {
     yaml = {
       schemaStore = {
@@ -96,7 +95,7 @@ require('lspconfig').yamlls.setup(coq.lsp_ensure_capabilities({
       schemas = require('schemastore').yaml.schemas(),
     },
   },
-}))
+})
 
 
 -- Ansible
@@ -107,19 +106,19 @@ lsp.ansiblels.setup{
 -- C#
 -- Dotnet
 
-lsp.csharp_ls.setup(coq.lsp_ensure_capabilities({
+lsp.csharp_ls.setup({
 
   handlers = {
     ["textDocument/definition"] = require('csharpls_extended').handler,
   }
 
-}))
+})
 
 -- Bash
-lsp.bashls.setup{}
+lsp.bashls.setup {}
 
 -- Typescript
-lsp.tsserver.setup(coq.lsp_ensure_capabilities({}));
+lsp.tsserver.setup {}
 
 
 -- lua
