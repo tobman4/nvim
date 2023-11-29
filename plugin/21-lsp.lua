@@ -1,4 +1,5 @@
 local lsp = require'lspconfig'
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require "lsp_signature".setup({
   auto_close_after = 2,
@@ -107,7 +108,7 @@ lsp.ansiblels.setup{
 -- Dotnet
 
 lsp.csharp_ls.setup({
-
+  capabilities = capabilities,
   handlers = {
     ["textDocument/definition"] = require('csharpls_extended').handler,
   }
