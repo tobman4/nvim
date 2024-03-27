@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
   -- use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 
   use 'tpope/vim-commentary'
+  use 'prisma/vim-prisma'
 
   -- TabLine
   -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
@@ -66,6 +67,14 @@ return require('packer').startup(function(use)
       require("telescope").load_extension("yaml_schema")
     end,
   }
+
+  -- use {
+  --   "m4xshen/hardtime.nvim",
+  --   requires = {
+  --     { "MunifTanjim/nui.nvim" },
+  --     { "nvim-lua/plenary.nvim" },
+  --   }
+  -- }
 
   --[[
   use({
