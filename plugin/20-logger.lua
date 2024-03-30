@@ -3,18 +3,18 @@ local log = require("structlog")
 log.configure({
   default = {
     pipelines = {
-      {
-        log.level.INFO,
-        {
-          log.processors.Timestamper("%H:%M:%S"),
-        },
-        log.formatters.Format( --
-          "%s [%s] %s: %-30s",
-          { "timestamp", "level", "logger_name", "msg" },
-          { blacklist_all = true }
-        ),
-        log.sinks.Console(),
-      },
+      -- {
+      --   log.level.INFO,
+      --   {
+      --     log.processors.Timestamper("%H:%M:%S"),
+      --   },
+      --   log.formatters.Format( --
+      --     "%s [%s] %s: %-30s",
+      --     { "timestamp", "level", "logger_name", "msg" },
+      --     { blacklist_all = true }
+      --   ),
+      --   log.sinks.Console(),
+      -- },
       {
         log.level.INFO,
         {
