@@ -31,6 +31,7 @@ let g:loaded_perl_provider = 0
 
 let g:NERDTreeWinPos="right"
 let g:NERDTreeFileLines = 1
+
 " let g:airline_statusline_ontop=1
 
 filetype plugin on
@@ -104,7 +105,7 @@ map <F8> :TagbarToggle<CR>
 
 " }}}
 
-colorscheme lunar
+colorscheme sierra
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
