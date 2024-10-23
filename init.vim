@@ -105,7 +105,7 @@ map <F8> :TagbarToggle<CR>
 
 " }}}
 
-colorscheme sierra
+colorscheme catppuccin
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
