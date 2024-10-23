@@ -108,6 +108,7 @@ lsp.ansiblels.setup{
 -- Dotnet
 
 lsp.csharp_ls.setup({
+  -- cma = "csharp-ls -l",
   capabilities = capabilities,
   handlers = {
     ["textDocument/definition"] = require('csharpls_extended').handler,

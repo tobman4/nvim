@@ -27,7 +27,10 @@ set updatetime=300
 
 let g:python3_host_prog = $VIM_PY
 let g:python_recommended_style=0
+let g:loaded_perl_provider = 0
 
+let g:NERDTreeWinPos="right"
+let g:NERDTreeFileLines = 1
 " let g:airline_statusline_ontop=1
 
 filetype plugin on
