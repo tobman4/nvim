@@ -41,7 +41,6 @@ return require('packer').startup(function(use)
   -- use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 
   use 'tpope/vim-commentary'
-  use 'prisma/vim-prisma'
 
   -- TabLine
   -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
@@ -50,8 +49,6 @@ return require('packer').startup(function(use)
 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-
-  use 'vimwiki/vimwiki'
 
   use {
     "someone-stole-my-name/yaml-companion.nvim",
