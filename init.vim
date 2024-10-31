@@ -58,7 +58,7 @@ nmap <A-Right> :vertical resize +5<CR>
 nmap <A-Up> :horizontal resize +5<CR>
 nmap <A-Down> :horizontal resize -5<CR>
 
-
+nmap <Leader>tm :TableModeToggle
 
 map <S-Left> ^
 map <S-Right> $
@@ -73,8 +73,13 @@ map <F8> :TagbarToggle<CR>
 
 " }}}
 
+" TableMode: {{{
 
+let b:table_mode_corner='+'
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
 
+" }}}
 
 " Provider: {{{
 
