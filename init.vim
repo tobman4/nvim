@@ -73,31 +73,8 @@ map <F8> :TagbarToggle<CR>
 
 " }}}
 
-" call plug#begin()
 
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'dracula/vim'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-" Plug 'vn-ki/coc-clap'
-" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-" Plug 'flazz/vim-colorschemes'
-" Plug 'puremourning/vimspector'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'mhinz/vim-signify'
-" Plug 'OmniSharp/omnisharp-vim'
-" Plug 'nickspoons/vim-sharpenup'
-" Plug 'APZelos/blamer.nvim'
-" Plug 'tpope/vim-fugitive'
-" Plug 'dense-analysis/ale'
-" Plug 'tpope/vim-fugitive'
-" Plug 'preservim/nerdtree'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" call plug#end()
 
 " Provider: {{{
 

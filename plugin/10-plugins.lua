@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
 
-  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip' -- Autocompletion... i think
   use 'hrsh7th/cmp-vsnip'
 
   -- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
