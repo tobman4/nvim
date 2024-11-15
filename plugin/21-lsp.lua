@@ -119,8 +119,8 @@ lsp.csharp_ls.setup({
 -- Bash
 lsp.bashls.setup {}
 
--- Typescript
-lsp.tsserver.setup {}
+-- -- Typescript
+-- lsp.ts_ls.setup {}
 
 
 -- lua
