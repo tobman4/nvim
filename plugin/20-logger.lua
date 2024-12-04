@@ -38,5 +38,4 @@ log.configure({
 })
 
 local logger = log.get_logger("default")
-
-logger:info("Hello logger!")
+logger:info("Logger <START>")
