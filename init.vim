@@ -27,6 +27,10 @@ set updatetime=300
 
 let g:python3_host_prog = $VIM_PY
 let g:python_recommended_style=0
+let g:loaded_perl_provider = 0
+
+let g:NERDTreeWinPos="right"
+let g:NERDTreeFileLines = 1
 
 " let g:airline_statusline_ontop=1
 
@@ -54,7 +58,7 @@ nmap <A-Right> :vertical resize +5<CR>
 nmap <A-Up> :horizontal resize +5<CR>
 nmap <A-Down> :horizontal resize -5<CR>
 
-
+nmap <Leader>tm :TableModeToggle
 
 map <S-Left> ^
 map <S-Right> $
@@ -69,31 +73,13 @@ map <F8> :TagbarToggle<CR>
 
 " }}}
 
-" call plug#begin()
+" TableMode: {{{
 
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'dracula/vim'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+let b:table_mode_corner='+'
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
 
-" Plug 'vn-ki/coc-clap'
-" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-" Plug 'flazz/vim-colorschemes'
-" Plug 'puremourning/vimspector'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'mhinz/vim-signify'
-" Plug 'OmniSharp/omnisharp-vim'
-" Plug 'nickspoons/vim-sharpenup'
-" Plug 'APZelos/blamer.nvim'
-" Plug 'tpope/vim-fugitive'
-" Plug 'dense-analysis/ale'
-" Plug 'tpope/vim-fugitive'
-" Plug 'preservim/nerdtree'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" call plug#end()
+" }}}
 
 " Provider: {{{
 
@@ -101,7 +87,7 @@ map <F8> :TagbarToggle<CR>
 
 " }}}
 
-colorscheme lunar
+colorscheme catppuccin
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on

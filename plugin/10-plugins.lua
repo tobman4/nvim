@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
 
-  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip' -- Autocompletion... i think
   use 'hrsh7th/cmp-vsnip'
 
   -- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
@@ -34,12 +34,13 @@ return require('packer').startup(function(use)
   use "ray-x/lsp_signature.nvim"
 
   use 'preservim/tagbar'
+  use 'xiyaowong/transparent.nvim'
+  use 'AlessandroYorba/Sierra'
 
   -- use 'ms-jpq/coq_nvim'
   -- use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
 
   use 'tpope/vim-commentary'
-  use 'prisma/vim-prisma'
 
   -- TabLine
   -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
@@ -48,13 +49,6 @@ return require('packer').startup(function(use)
 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
-
-  use 'vimwiki/vimwiki'
-
-  use {
-    "cbochs/grapple.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-  }
 
   use {
     "someone-stole-my-name/yaml-companion.nvim",

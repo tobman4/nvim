@@ -108,6 +108,7 @@ lsp.ansiblels.setup{
 -- Dotnet
 
 lsp.csharp_ls.setup({
+  -- cma = "csharp-ls -l",
   capabilities = capabilities,
   handlers = {
     ["textDocument/definition"] = require('csharpls_extended').handler,
@@ -118,8 +119,8 @@ lsp.csharp_ls.setup({
 -- Bash
 lsp.bashls.setup {}
 
--- Typescript
-lsp.tsserver.setup {}
+-- -- Typescript
+-- lsp.ts_ls.setup {}
 
 
 -- lua
