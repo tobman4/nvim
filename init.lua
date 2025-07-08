@@ -17,4 +17,4 @@ vim.o.relativenumber = true
 
 vim.o.mouse = ""
 
-vim.cmd("colorscheme retrobox")
+vim.cmd("colorscheme deus")
