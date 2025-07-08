@@ -1,7 +1,5 @@
 -- Plugins
 require("config")
--- require("config.lazy")
--- require("config.telescope")
 require("nvim-cmp")
 require("keymap")
 
