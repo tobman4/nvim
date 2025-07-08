@@ -11,7 +11,10 @@ vim.lsp.config['luals'] = {
       },
       diagnostics = {
         globals = { 'vim' },
-      }
+      },
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			}
 		}
 	}
 }

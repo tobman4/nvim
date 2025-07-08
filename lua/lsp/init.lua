@@ -9,5 +9,7 @@ vim.diagnostic.config({
   },
   signs = true,
   underline = true,
-  update_in_insert = true, -- ← This controls underlines and signs
+  update_in_insert = true
 })
+
+-- require("lsp.dotnet")

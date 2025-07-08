@@ -1,10 +1,14 @@
 -- Plugins
-require("config.lazy")
+require("config")
+-- require("config.lazy")
+-- require("config.telescope")
+require("nvim-cmp")
 require("keymap")
 
 -- LSP
 require("lsp")
 require("lsp.lua")
+require("lsp.dotnet")
 
 -- Settings
 vim.o.tabstop = 2
@@ -14,3 +18,5 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 vim.o.mouse = ""
+
+vim.cmd("colorscheme retrobox")
