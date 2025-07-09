@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	"nvim-treesitter/nvim-treesitter",
 
 	-- Autocomplete
 	"hrsh7th/cmp-nvim-lsp",
@@ -21,6 +22,15 @@ return {
 	},
 
 	-- Color
-	"ajmwagar/vim-deus"
+	"ajmwagar/vim-deus",
 
+	-- DAP
+	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio"
+		}
+	}
+	-- "nicholasmata/nvim-dap-cs"
 }

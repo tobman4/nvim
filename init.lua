@@ -8,6 +8,9 @@ require("lsp")
 require("lsp.lua")
 require("lsp.dotnet")
 
+-- DAP
+require("my-dap")
+
 -- Settings
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
