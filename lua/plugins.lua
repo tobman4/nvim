@@ -31,6 +31,7 @@ return {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio"
 		}
-	}
-	-- "nicholasmata/nvim-dap-cs"
+	},
+	-- "nicholasmata/nvim-dap-cs",
+	"mfussenegger/nvim-dap-python"
 }

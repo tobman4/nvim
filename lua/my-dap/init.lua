@@ -39,3 +39,4 @@ vim.api.nvim_set_keymap("n", "db", ":DapToggleBreakpoint<CR>", { noremap = true 
 vim.api.nvim_set_keymap("n", "<F5>", ":DapContinue<CR>", { noremap= true })
 vim.api.nvim_set_keymap("n", "<F9>", ":DapStepOver<CR>", { noremap= true })
 
+require("my-dap.python")
