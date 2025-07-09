@@ -13,3 +13,4 @@ vim.diagnostic.config({
 })
 
 -- require("lsp.dotnet")
+require("lsp.python")
