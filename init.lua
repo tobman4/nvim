@@ -5,8 +5,6 @@ require("keymap")
 
 -- LSP
 require("lsp")
-require("lsp.lua")
-require("lsp.dotnet")
 
 -- Settings
 vim.o.tabstop = 2

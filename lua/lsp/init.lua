@@ -12,5 +12,6 @@ vim.diagnostic.config({
   update_in_insert = true
 })
 
--- require("lsp.dotnet")
+require("lsp.lua")
+require("lsp.dotnet")
 require("lsp.python")
