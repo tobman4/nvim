@@ -40,6 +40,7 @@ return {
     "Dan7h3x/neaterm.nvim",
     branch = "stable",
     event = "VeryLazy",
+		opts = {}, -- this line is super important
     dependencies = {
       "nvim-lua/plenary.nvim",
       "ibhagwan/fzf-lua",
