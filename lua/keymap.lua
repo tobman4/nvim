@@ -6,3 +6,9 @@ vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true 
 vim.keymap.set("n", "<leader>gg", ":VGit project_diff_preview<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>gl", ":VGit project_logs_preview<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>gh", ":VGit buffer_history_preview<CR>", { noremap = true })
+
+-- LSP
+vim.keymap.set("i", "<C-s>", function()
+	require("lsp_signature").toggle_float_win()
+end, { silent = true, noremap = true });
+

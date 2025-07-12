@@ -11,6 +11,14 @@ return {
 		"hrsh7th/nvim-cmp",
 		dependencies = { "onsails/lspkind.nvim" }
 	},
+	{
+  	"ray-x/lsp_signature.nvim",
+  	event = "InsertEnter",
+  	opts = {
+			-- cfg options
+			toggle_key_flip_floatwin_setting = true
+  	}
+	},
 
 	-- GIT
 	{
