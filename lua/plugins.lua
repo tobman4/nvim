@@ -41,7 +41,7 @@ return {
 		}
 	},
 	-- "nicholasmata/nvim-dap-cs",
-	"mfussenegger/nvim-dap-python",
+	-- "mfussenegger/nvim-dap-python",
 
 	-- Terminal
 	{
