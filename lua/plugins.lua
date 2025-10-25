@@ -32,17 +32,6 @@ return {
 	-- Color
 	"ajmwagar/vim-deus",
 
-	-- DAP
-	{
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"rcarriga/nvim-dap-ui",
-			"nvim-neotest/nvim-nio"
-		}
-	},
-	-- "nicholasmata/nvim-dap-cs",
-	-- "mfussenegger/nvim-dap-python",
-
 	-- Terminal
 	{
     "Dan7h3x/neaterm.nvim",

@@ -6,8 +6,6 @@ require("keymap")
 -- LSP
 require("lsp")
 
--- DAP
--- require("my-dap")
 
 -- Settings
 vim.o.tabstop = 2
