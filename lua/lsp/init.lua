@@ -15,3 +15,4 @@ vim.diagnostic.config({
 require("lsp.lua")
 require("lsp.dotnet")
 require("lsp.python")
+require("lsp.rust")
