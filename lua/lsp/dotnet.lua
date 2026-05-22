@@ -8,6 +8,15 @@ local ok_cmp, cmp_caps = pcall(function()
   return require("cmp_nvim_lsp").default_capabilities()
 end)
 
+local handlers = {
+  ["textDocument/definition"] = function(...)
+    return require("csharpls_extended").handler(...)
+  end,
+  ["textDocument/typeDefinition"] = function(...)
+    return require("csharpls_extended").handler(...)
+  end,
+}
+
 vim.lsp.config.csharp_ls = {
   cmd = { cmd },
   filetypes = { "cs", "csx" },
@@ -15,7 +24,13 @@ vim.lsp.config.csharp_ls = {
   init_options = {
     AutomaticWorkspaceInit = true
   },
+  settings = {
+    csharp = {
+      useMetadataUris = true
+    }
+  },
   capabilities = ok_cmp and cmp_caps or nil,
+  handlers = handlers,
 }
 
 vim.lsp.enable("csharp_ls")
