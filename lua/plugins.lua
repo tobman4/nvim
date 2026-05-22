@@ -32,6 +32,19 @@ return {
 	-- Color
 	"ajmwagar/vim-deus",
 
+	-- File Explorer
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("nvim-tree").setup({
+				view = {
+					side = "right",
+				},
+			})
+		end,
+	},
+
 	-- Terminal
 	{
     "Dan7h3x/neaterm.nvim",
