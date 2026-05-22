@@ -1,0 +1,3 @@
+## 2026-05-22 - Visual Hierarchy in Neovim Float Windows
+**Learning:** In terminal-based UIs like Neovim, floating windows (like autocomplete popups or documentation) can easily blend into the background buffer text, causing visual confusion and making it harder for users to parse the suggestions.
+**Action:** Always consider enabling bordered windows for floating UI elements to establish clear visual hierarchy and separation from the main content.
