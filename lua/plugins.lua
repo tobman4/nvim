@@ -33,6 +33,7 @@ return {
 
 	-- Color
 	"ajmwagar/vim-deus",
+	"rose-pine/neovim",
 
 	-- File Explorer
 	{

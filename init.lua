@@ -19,4 +19,4 @@ vim.o.relativenumber = true
 
 vim.o.mouse = ""
 
-vim.cmd("colorscheme sorbet")
+vim.cmd("colorscheme rose-pine-moon")
