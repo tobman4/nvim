@@ -5,10 +5,10 @@ require("keymap")
 
 -- LSP
 require("lsp")
-require("lsp.lua")
-require("lsp.dotnet")
 
 -- Settings
+vim.g.python_recommended_style = 0 -- Stop python from forcing 4 spaces
+
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
