@@ -12,3 +12,8 @@ vim.keymap.set("i", "<C-s>", function()
 	require("lsp_signature").toggle_float_win()
 end, { silent = true, noremap = true });
 
+-- Window Resizing
+vim.keymap.set("n", "<M-Up>", ":resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-Down>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
