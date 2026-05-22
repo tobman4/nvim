@@ -14,6 +14,11 @@ vim.keymap.set("i", "<C-s>", function()
 	require("lsp_signature").toggle_float_win()
 end, { silent = true, noremap = true });
 
+vim.keymap.set("n", "<leader>gd", function()
+	vim.cmd("vsplit")
+	vim.lsp.buf.definition()
+end, { silent = true, noremap = true, desc = "Go to definition in vertical split" })
+
 -- Window Resizing
 vim.keymap.set("n", "<M-Up>", ":resize -2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-Down>", ":resize +2<CR>", { noremap = true, silent = true })

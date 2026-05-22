@@ -45,6 +45,9 @@ return {
 		end,
 	},
 
+	-- LSP Enhancements
+	"Decodetalkers/csharpls-extended-lsp.nvim",
+
 	-- Terminal
 	{
     "Dan7h3x/neaterm.nvim",
