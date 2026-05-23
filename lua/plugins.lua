@@ -50,6 +50,25 @@ return {
 
 	-- LSP Enhancements
 	"Decodetalkers/csharpls-extended-lsp.nvim",
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({
+				lightbulb = {
+					enable = true,
+					sign = true,
+					virtual_text = true,
+				},
+				symbol_in_winbar = {
+					enable = true,
+				},
+			})
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter", -- optional
+			"nvim-tree/nvim-web-devicons",     -- optional
+		},
+	},
 
 	-- Terminal
 	{

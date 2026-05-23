@@ -19,6 +19,19 @@ vim.keymap.set("n", "<leader>gd", function()
 	vim.lsp.buf.definition()
 end, { silent = true, noremap = true, desc = "Go to definition in vertical split" })
 
+-- Lspsaga
+vim.keymap.set("n", "<leader>lf", "<cmd>Lspsaga finder<CR>", { noremap = true, silent = true, desc = "Lspsaga Finder" })
+vim.keymap.set({ "n", "v" }, "<leader>lc", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true, desc = "Lspsaga Code Action" })
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true, desc = "Lspsaga Hover Doc" })
+vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true, desc = "Lspsaga Rename" })
+vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga peek_definition<CR>", { noremap = true, silent = true, desc = "Lspsaga Peek Definition" })
+vim.keymap.set("n", "<leader>li", "<cmd>Lspsaga incoming_calls<CR>", { noremap = true, silent = true, desc = "Lspsaga Incoming Calls" })
+vim.keymap.set("n", "<leader>lo", "<cmd>Lspsaga outgoing_calls<CR>", { noremap = true, silent = true, desc = "Lspsaga Outgoing Calls" })
+vim.keymap.set("n", "<leader>ln", "<cmd>Lspsaga diagnostic_jump_next<CR>", { noremap = true, silent = true, desc = "Lspsaga Diagnostic Jump Next" })
+vim.keymap.set("n", "<leader>lp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { noremap = true, silent = true, desc = "Lspsaga Diagnostic Jump Prev" })
+vim.keymap.set("n", "<leader>ll", "<cmd>Lspsaga outline<CR>", { noremap = true, silent = true, desc = "Lspsaga Outline" })
+vim.keymap.set({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>", { noremap = true, silent = true, desc = "Lspsaga Toggle Terminal" })
+
 -- Window Resizing
 vim.keymap.set("n", "<M-Up>", ":resize -2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-Down>", ":resize +2<CR>", { noremap = true, silent = true })
