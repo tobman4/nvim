@@ -5,11 +5,15 @@ vim.fn.sign_define("DiagnosticSignHint",  { text = "🧠", texthl = "DiagnosticS
 
 vim.diagnostic.config({
   virtual_text = {
-    update_in_insert = true,
+    -- Setting update_in_insert to false improves typing performance significantly
+    -- by avoiding continuous diagnostic re-evaluation during insert mode.
+    update_in_insert = false,
   },
   signs = true,
   underline = true,
-  update_in_insert = true
+  -- Setting update_in_insert to false improves typing performance significantly
+  -- by avoiding continuous diagnostic re-evaluation during insert mode.
+  update_in_insert = false
 })
 
 require("lsp.lua")
