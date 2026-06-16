@@ -23,10 +23,6 @@ vim.lsp.config.pylsp = {
     pylsp = {
       plugins = {
         pycodestyle = { maxLineLength = 100 },
-        -- enable/disable others as you like:
-        -- pylint = { enabled = true },
-        -- pyflakes = { enabled = true },
-        -- yapf = { enabled = false },
       },
     },
   },
