@@ -1,6 +1,9 @@
+local logging = require("logging")
+
 local luals = os.getenv("LUA_LSP_PATH") or vim.fn.exepath("lua-language-server")
 if luals == "" then
-  vim.notify("lua-language-server not found (set $LUA_LSP_PATH or add to PATH)", vim.log.levels.ERROR)
+  logging:warn("lua-language-server not found (set $LUA_LSP_PATH or add to PATH)")
+  -- vim.notify("lua-language-server not found (set $LUA_LSP_PATH or add to PATH)", vim.log.levels.ERROR)
   return
 end
 

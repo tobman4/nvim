@@ -1,6 +1,8 @@
+local logging = require("logging")
+
 local cmd = vim.fn.exepath("csharp-ls")
 if cmd == "" then
-  vim.notify("csharp-ls not found in PATH", vim.log.levels.ERROR)
+  logging:warn("csharp-ls not found in PATH")
   return
 end
 

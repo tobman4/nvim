@@ -2,6 +2,7 @@
 require("config")
 require("nvim-cmp")
 require("keymap")
+require("logging")
 
 -- LSP
 require("lsp")
