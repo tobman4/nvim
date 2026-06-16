@@ -10,13 +10,13 @@ local ok_cmp, cmp_caps = pcall(function()
   return require("cmp_nvim_lsp").default_capabilities()
 end)
 
+local function extended_handler(...)
+  return require("csharpls_extended").handler(...)
+end
+
 local handlers = {
-  ["textDocument/definition"] = function(...)
-    return require("csharpls_extended").handler(...)
-  end,
-  ["textDocument/typeDefinition"] = function(...)
-    return require("csharpls_extended").handler(...)
-  end,
+  ["textDocument/definition"] = extended_handler,
+  ["textDocument/typeDefinition"] = extended_handler,
 }
 
 vim.lsp.config.csharp_ls = {
