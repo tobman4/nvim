@@ -1,5 +1,5 @@
 return {
-	"nvim-telescope/telescope.nvim",
+	{ "nvim-telescope/telescope.nvim", version = "0.1.x", lazy = true, cmd = "Telescope", keys = { { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" } }, config = function() require("config.telescope") end, },
 	"nvim-treesitter/nvim-treesitter",
 
 	-- Autocomplete
