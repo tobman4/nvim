@@ -2,7 +2,7 @@
 vim.keymap.set("n", "<C-f>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true })
+
 
 -- GIT
 vim.keymap.set("n", "<leader>gg", ":VGit project_diff_preview<CR>", { noremap = true })
