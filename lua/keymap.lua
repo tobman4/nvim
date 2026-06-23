@@ -9,6 +9,13 @@ vim.keymap.set("n", "<leader>gg", ":VGit project_diff_preview<CR>", { noremap = 
 vim.keymap.set("n", "<leader>gl", ":VGit project_logs_preview<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>gh", ":VGit buffer_history_preview<CR>", { noremap = true })
 
+-- Laptop fix
+vim.keymap.set("n", "<Find>", "<Home>")
+vim.keymap.set("i", "<Find>", "<Home>")
+vim.keymap.set("n", "<Select>", "<End>")
+vim.keymap.set("i", "<Select>", "<End>")
+
+
 -- LSP
 vim.keymap.set("i", "<C-s>", function()
 	require("lsp_signature").toggle_float_win()
