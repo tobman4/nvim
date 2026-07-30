@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	"nvim-treesitter/nvim-treesitter",
+	{ "nvim-treesitter/nvim-treesitter", branch = "main" },
 
 	-- Autocomplete
 	"hrsh7th/cmp-nvim-lsp",
@@ -65,7 +65,7 @@ return {
 			})
 		end,
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
+			{ "nvim-treesitter/nvim-treesitter", branch = "main" }, -- optional
 			"nvim-tree/nvim-web-devicons",     -- optional
 		},
 	},
