@@ -16,6 +16,7 @@ vim.lsp.config.wowlua_ls = {
   end,
   filetypes = { 'lua' },
   root_markers = { '.wowluarc.json', function(name, path) return name:match('%.toc$') ~= nil end },
+  workspace_required = true,
   single_file_support = false,
   capabilities = ok_cmp and cmp_caps or nil,
 }
