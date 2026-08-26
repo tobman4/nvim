@@ -1,5 +1,3 @@
-local notify = require("notify")
-
 local Logger = {}
 Logger.__index = Logger
 
@@ -12,19 +10,19 @@ function Logger:new(name)
 end
 
 function Logger:info(msg)
-  notify.notify(msg, vim.log.levels.INFO, {
+  require("notify").notify(msg, vim.log.levels.INFO, {
     title = self.name
   });
 end
 
 function Logger:warn(msg)
-  notify.notify(msg, vim.log.levels.WARN, {
+  require("notify").notify(msg, vim.log.levels.WARN, {
     title = self.name
   })
 end
 
 function Logger:error(msg)
-  notify.notify(msg, vim.log.levels.ERROR, {
+  require("notify").notify(msg, vim.log.levels.ERROR, {
     title = self.name
   })
 end
