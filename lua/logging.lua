@@ -4,7 +4,7 @@ local Logger = {}
 Logger.__index = Logger
 
 function Logger:new(name)
-  local instance = setmetatable(Logger, {});
+  local instance = setmetatable({}, self);
 
   instance.name = name
 
