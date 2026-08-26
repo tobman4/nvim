@@ -1,6 +1,5 @@
 -- Plugins
 require("config")
-require("nvim-cmp")
 require("keymap")
 require("logging")
 
