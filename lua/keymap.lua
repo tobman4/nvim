@@ -46,7 +46,7 @@ vim.keymap.set("n", "<M-Left>", ":vertical resize -2<CR>", { noremap = true, sil
 vim.keymap.set("n", "<M-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
 -- Barbar
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
