@@ -1,11 +1,5 @@
 local logging = require("logging")
 
-local cmd = vim.fn.exepath("csharp-ls")
-if cmd == "" then
-  logging:warn("csharp-ls not found in PATH")
-  return
-end
-
 local ok_cmp, cmp_caps = pcall(function()
   return require("cmp_nvim_lsp").default_capabilities()
 end)
@@ -20,7 +14,14 @@ local handlers = {
 }
 
 vim.lsp.config.csharp_ls = {
-  cmd = { cmd },
+  cmd = function()
+    local cmd = vim.fn.exepath("csharp-ls")
+    if cmd == "" then
+      logging:warn("csharp-ls not found in PATH")
+      return nil
+    end
+    return { cmd }
+  end,
   filetypes = { "cs", "csx" },
   single_file_support = true,
   init_options = {
