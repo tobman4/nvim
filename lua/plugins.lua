@@ -11,7 +11,11 @@ return {
 	"saadparwaiz1/cmp_luasnip",
 	{
 		"hrsh7th/nvim-cmp",
-		dependencies = { "onsails/lspkind.nvim" }
+		dependencies = { "onsails/lspkind.nvim" },
+		event = "InsertEnter",
+		config = function()
+			require("nvim-cmp")
+		end,
 	},
 	{
   	"ray-x/lsp_signature.nvim",
