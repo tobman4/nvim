@@ -6,10 +6,6 @@ if cmd == "" then
   return
 end
 
-local ok_cmp, cmp_caps = pcall(function()
-  return require("cmp_nvim_lsp").default_capabilities()
-end)
-
 local function extended_handler(...)
   return require("csharpls_extended").handler(...)
 end
@@ -31,7 +27,7 @@ vim.lsp.config.csharp_ls = {
       useMetadataUris = true
     }
   },
-  capabilities = ok_cmp and cmp_caps or nil,
+  capabilities = require("lsp.utils").get_capabilities(),
   handlers = handlers,
 }
 

@@ -23,7 +23,8 @@ vim.lsp.config.luals = {
         library = vim.api.nvim_get_runtime_file("", true),
       }
     }
-  }
+  },
+  capabilities = require("lsp.utils").get_capabilities(),
 }
 
 vim.lsp.enable("luals")

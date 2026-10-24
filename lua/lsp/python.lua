@@ -1,10 +1,5 @@
 local logging = require("logging")
 
--- Capabilities for nvim-cmp (optional but recommended)
-local ok_cmp, cmp_caps = pcall(function()
-  return require("cmp_nvim_lsp").default_capabilities()
-end)
-
 local pylsp = os.getenv("PYLSP_PATH") or vim.fn.exepath("pylsp")
 if pylsp == "" then
   logging:warn("pylsp not found (set $PYLSP_PATH or add to PATH)")
@@ -26,7 +21,7 @@ vim.lsp.config.pylsp = {
       },
     },
   },
-  capabilities = ok_cmp and cmp_caps or nil,
+  capabilities = require("lsp.utils").get_capabilities(),
 }
 
 vim.lsp.enable("pylsp")
